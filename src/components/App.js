@@ -1,9 +1,11 @@
 import React from 'react';
 
+import AdsList from './AdsList';
+
 const App = () => {
   return (
     <div>
-      DANIIL
+      <AdsList />
     </div>
   );
 };
