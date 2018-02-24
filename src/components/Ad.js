@@ -1,4 +1,5 @@
 import React from 'react';
+import './Ad.less';
 
 const Ad = ({
   id,
@@ -13,8 +14,8 @@ const Ad = ({
   space
 }) => {
   return (
-    <li>
-      <a href={`#/advertisement/${id}`}>
+    <li className="ad">
+      <a className="ad__link" href={`#/advertisement/${id}`}>
         <button disabled="disabled">{purpose}</button>
         <img src={imgUrl} />
         <h4>{title}</h4>

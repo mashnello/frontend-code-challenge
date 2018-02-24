@@ -2,6 +2,8 @@ import React from 'react'
 import ads from './ads.json';
 import Ad from './Ad';
 
+import './AdsList.less';
+
 const CORS_PROXY = 'http://cors-anywhere.herokuapp.com';
 const API_URL = '/api.mcmakler.de/v1/advertisements';
 
@@ -47,7 +49,7 @@ class AdsList extends React.Component {
     }
 
     return (
-      <ul>
+      <ul className="adsList">
         {ads.map(ad => {
           const { additionalId, title, realestateSummary } = ad;
           const { address, numberOfRooms, space } = realestateSummary;
