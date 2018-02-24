@@ -53,6 +53,7 @@ class AdsList extends React.Component {
           const { address, numberOfRooms, space } = realestateSummary;
           return (<Ad
             key={additionalId}
+            id={additionalId}
             purpose={this.getPurpose(ad)}
             title={title}
             imgUrl={this.getTitlePictureUrl(ad)}
