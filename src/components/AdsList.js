@@ -38,8 +38,8 @@ class AdsList extends React.Component {
 
   getPrice(ad) {
     return ad.purpose
-      ? ad.advertisementPrice.baseRent
-      : ad.advertisementPrice.sellPrice;
+      ? ad.advertisementPrice.sellPrice
+      : ad.advertisementPrice.baseRent;      
   }
 
   render() {
