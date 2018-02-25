@@ -1,6 +1,8 @@
-import React from 'react'
+/* global fetch */
 
-import ads from './ads.json';
+import React from 'react';
+
+import adsJson from './ads.json';
 import Ad from './Ad';
 import Preloader from './Preloader';
 
@@ -14,15 +16,15 @@ class AdsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ads: []
+      ads: [],
     };
   }
 
   componentDidMount() {
-    const ads = fetch(`${CORS_PROXY}${API_URL}`)
+    fetch(`${CORS_PROXY}${API_URL}`)
       .then(res => res.json())
       .then(res => this.setState({ ads: res.data.slice(0, 10) }))
-      .catch(() => this.setState({ ads }));
+      .catch(() => this.setState({ ads: adsJson }));
   }
 
   getTitlePictureUrl(ad) {
@@ -41,10 +43,10 @@ class AdsList extends React.Component {
   getPrice(ad) {
     const price = ad.purpose
       ? ad.advertisementPrice.sellPrice
-      : ad.advertisementPrice.baseRent
+      : ad.advertisementPrice.baseRent;
     return price
       ? price.toLocaleString('de-DE')
-      : 'N/A';      
+      : 'N/A';
   }
 
   renderAd(ad) {
@@ -63,7 +65,7 @@ class AdsList extends React.Component {
       rooms={numberOfRooms}
       space={Math.round(space)}
     />);
-  } 
+  }
 
   render() {
     const { ads } = this.state;
