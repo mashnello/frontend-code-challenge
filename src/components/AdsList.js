@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import adsJson from './ads.json';
+import adsJson from './mockData/ads.json';
 import Ad from './Ad';
 import Preloader from './Preloader';
 
