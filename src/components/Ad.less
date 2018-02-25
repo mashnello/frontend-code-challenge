@@ -1,5 +1,83 @@
+@light-grey: rgb(204, 204, 204);
+@dark-grey: rgb(110, 110, 110);
+
 .ad {
   list-style: none;
-  border: 1px solid rgb(110, 110, 110);
+  border: 1px solid @light-grey;
+  height: 550px;
+  width: 30%;
+  margin: 0 20px 30px;
+  position: relative;
 
+  &__link {
+    display: block;
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+      color: @dark-grey;
+    }
+  }  
+  &__type {
+    width: 80px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 600;
+    color: @light-grey;
+    background: #fff;
+    border-radius: 3px;
+    padding: 0;
+    box-shadow: 1px 1px 3px @light-grey;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 300px;
+  }
+  &__summary {
+    padding: 40px;
+    height: 250px;
+    box-sizing: border-box;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    margin: 0;
+    min-height: 55px;
+    color: @dark-grey;
+    font-weight: 600;
+  }
+  &__address {
+    margin: 0;    
+    font-size: 1em;
+    color: @light-grey;
+  }
+  &__indicators {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+  }
+  &__price {
+    color: @dark-grey;    
+  }
+  &__area {
+    color: @light-grey;    
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__rooms {
+    &:after {
+      content: '';
+      border-right: 1px solid @light-grey;
+      margin-left: 20px;
+    }
+  }
+  &__space {
+  }
 }

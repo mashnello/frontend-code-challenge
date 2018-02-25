@@ -16,19 +16,29 @@ const Ad = ({
   return (
     <li className="ad">
       <a className="ad__link" href={`#/advertisement/${id}`}>
-        <button disabled="disabled">{purpose}</button>
-        <img src={imgUrl} />
-        <h4>{title}</h4>
-        <p>
-          <span>{postalCode}</span>
-          {' '}
-          <span>{street}</span>
-          {' / '}
-          <span>{city}</span>
-        </p>
-        <p>{`${price} €`}</p>
-        <p>{`${rooms} Zimmer`}</p>
-        <p>{`ab ${space} m\u00B2`}</p>
+        <button className="ad__type" disabled="disabled">{purpose}</button>
+        <img className="ad__img" src={imgUrl} />
+        <div className="ad__summary">
+          <h4 className="ad__title">{title}</h4>
+          <p className="ad__address">
+            <span>{postalCode}</span>
+            {' '}
+            <span>{street}</span>
+            {' / '}
+            <span>{city}</span>
+          </p>
+          <p className="ad__indicators">
+            <span className="ad__price">
+              <strong>
+                {`${price} €`}
+              </strong>
+            </span>
+            <span className="ad__area">
+              <span className="ad__rooms">{`${rooms} Zimmer`}</span>
+              <span className="ad__space">{`ab ${space} m\u00B2`}</span>
+            </span>
+          </p>
+        </div>
       </a>
     </li>
   );
