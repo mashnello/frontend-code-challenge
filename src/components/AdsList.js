@@ -1,6 +1,8 @@
 import React from 'react'
+
 import ads from './ads.json';
 import Ad from './Ad';
+import Preloader from './Preloader';
 
 import './AdsList.less';
 
@@ -17,16 +19,16 @@ class AdsList extends React.Component {
   }
 
   componentDidMount() {
-    // const ads = fetch(`${CORS_PROXY}${API_URL}`)
-    //   .then(res => res.json())
-    //   .then(res => this.setState({ ads: res.data.slice(0, 10) }))
-    //   .catch(e => console.log(e));
-    this.setState({ ads });
+    const ads = fetch(`${CORS_PROXY}${API_URL}`)
+      .then(res => res.json())
+      .then(res => this.setState({ ads: res.data.slice(0, 10) }))
+      .catch(() => this.setState({ ads }));
   }
 
   getTitlePictureUrl(ad) {
-    return Object.values(ad.advertisementAssets)
-      .filter(asset => asset.titlePicture)[0]
+    const titlePicture = Object.values(ad.advertisementAssets)
+      .filter(asset => asset.titlePicture)[0];
+    return titlePicture
       .advertisementThumbnails
       .inventory_m
       .url;
@@ -44,8 +46,13 @@ class AdsList extends React.Component {
 
   render() {
     const { ads } = this.state;
+
     if (!ads.length) {
-      return '...';
+      return (
+        <Preloader
+          message="Please wait, data is loading..."
+        />
+      );
     }
 
     return (
