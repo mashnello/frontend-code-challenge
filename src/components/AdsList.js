@@ -39,10 +39,31 @@ class AdsList extends React.Component {
   }
 
   getPrice(ad) {
-    return ad.purpose
+    const price = ad.purpose
       ? ad.advertisementPrice.sellPrice
-      : ad.advertisementPrice.baseRent;      
+      : ad.advertisementPrice.baseRent
+    return price
+      ? price.toLocaleString('de-DE')
+      : 'N/A';      
   }
+
+  renderAd(ad) {
+    const { additionalId, title, realestateSummary } = ad;
+    const { address, numberOfRooms, space } = realestateSummary;
+    return (<Ad
+      key={additionalId}
+      id={additionalId}
+      purpose={this.getPurpose(ad)}
+      title={title}
+      imgUrl={this.getTitlePictureUrl(ad)}
+      postalCode={address.postalCode}
+      street={address.street}
+      city={address.city}
+      price={this.getPrice(ad)}
+      rooms={numberOfRooms}
+      space={Math.round(space)}
+    />);
+  } 
 
   render() {
     const { ads } = this.state;
@@ -57,23 +78,7 @@ class AdsList extends React.Component {
 
     return (
       <ul className="adsList">
-        {ads.map(ad => {
-          const { additionalId, title, realestateSummary } = ad;
-          const { address, numberOfRooms, space } = realestateSummary;
-          return (<Ad
-            key={additionalId}
-            id={additionalId}
-            purpose={this.getPurpose(ad)}
-            title={title}
-            imgUrl={this.getTitlePictureUrl(ad)}
-            postalCode={address.postalCode}
-            street={address.street}
-            city={address.city}
-            price={this.getPrice(ad)}
-            rooms={numberOfRooms}
-            space={Math.round(space)}
-          />);
-        })}
+        {ads.map(ad => this.renderAd(ad))}
       </ul>
     );
   }
