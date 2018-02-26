@@ -13,7 +13,7 @@ Btw if the order of my commits looks strange (e.g. eslint setup after the whole 
 
 ## Demo
 
-Please take find a demo [here](https://mashnello.github.io/frontend-code-challenge/)
+Please find a demo [here](https://mashnello.github.io/frontend-code-challenge/)
 
 ## Installation
 
