@@ -8,7 +8,7 @@ import Preloader from './Preloader';
 
 import './AdsList.less';
 
-const CORS_PROXY = 'http://cors-anywhere.herokuapp.com';
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com';
 const API_URL = '/api.mcmakler.de/v1/advertisements';
 
 
