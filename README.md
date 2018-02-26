@@ -1,49 +1,28 @@
 # Front-End Interview Test
 
-This is a simple front-end code challenge created to serve two purposes:
+## Technologies
+React, Less.
+It was not necessary to use Redux (etc.) to manage the state for such app.
+I've chosen React because it is my current lovely library, and I pretty much effecient with it. Less I've used just in case. For the current app state it's not really needed, but I don't want to rewrite styles from raw CSS later.
 
-1. Show off your skills,
-1. Give us a better understanding of your skills.
+## Excuses
+I'm going through all of the Bonus Points, for sure. Some of them are interesting for me and I want to learn more about them.
+But, unfortunately, I don't have enough time. But I will try.
 
-## The Task
+Btw if the order of my commits looks strange (e.g. eslint setup after the whole app is ready), that's becase of time limits as well. I gave an estimate, that the app will be ready till Monday morning, and it is. Agree you wouldn't care how many development tools are configured if the application is not ready.
 
-The programming challenge exists in 2 parts:
-* Part A: HTML + CSS
-* Part B: Javascript
+## Demo
 
-### PART A: HTML + CSS
+Please take find a demo [here](https://mashnello.github.io/frontend-code-challenge/)
 
-![Screen](https://raw.githubusercontent.com/mcmakler/frontend-code-challenge/master/assets/fe_test_example_screen.png)
+## Installation
 
-* Create a layout based on the given screen (fe_test_example_screen.png).
-* Style the layout consistently and beautifully, adhering as closely to the design as possible.
-* **NOTE:** You are free to use any preprocessor you wish, or write raw CSS. *Bonus points for an explanation of your choice.*
+```bash
+npm install
+```
 
-### PART B: Javascript
+## Running Dev Server
 
-* Consume our public API @ https://api.mcmakler.de/v1/advertisements to retrieve a list of advertisements of vacant apartments.
-* Display the first 10 advertisements in the HTML + CSS layout created in step A, sticking to the layout, placing data where it fits.
-* **NOTE:** You are free to use any framework you wish, or do it VanillaJS style. *Brief explanation of your choice.*
-
-## Additional Instructions
-
-* Fork this repository
-* After you're done, provide us the link to your repository.
-* Leave comments where you were not sure how to properly proceed.
-* Implementations without a README will be automatically rejected.
-* No pull requests
-* ES6 and above
-
-## Bonus Points
-
-* Tests
-* Clean code!
-* Knowledge of application flow.
-* Knowledge of modern best practices/coding patterns.
-* Demonstration of good state management.
-* Usage of frameworks/supersets.
-* Pixel perfection.
-* Componential thinking.
-* Usage of linters.
-* Git hooks.
-* Usage of Material Design concepts
+```bash
+npm run serve
+```
